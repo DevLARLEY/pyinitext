@@ -68,7 +68,7 @@ def ext(file) -> list:
 
 if __name__ == '__main__':
     file = input("init.mp4 file ~: ")
-    rs = ext(file)
+    rs = ext(file.replace('"', ''))
     if len(rs) > 0:
         for r in rs:
             print(f"PSSH (Base64): {r[0]}")
