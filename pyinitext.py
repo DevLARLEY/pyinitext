@@ -38,7 +38,7 @@ def ext(file) -> list:
                     p += 12
                 else:
                     s2 = int(f[p + 2:p + 4], 16) * 2
-                    if h == "12":
+                    if h == "12" or h == "22":
                         t.append(f[p + 4:p + 4 + s2])
                     p += s2 + 4
             res.append(t)
@@ -73,6 +73,6 @@ if __name__ == '__main__':
         for r in rs:
             print(f"PSSH (Base64): {r[0]}")
             for i in range(1, len(r)):
-                print(f"   |=> Key ID: {r[i]}")
+                print(f"   |=> Key/Content ID: {r[i]}")
     else:
         print("No pssh found that contains a key id.")
